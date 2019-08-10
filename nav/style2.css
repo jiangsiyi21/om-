@@ -1,0 +1,145 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding:0px;
+	margin:0px;
+}
+html,body{
+	width:100%;
+	font-family:"微软雅黑"; 
+}
+ul li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+body{
+	background: #fbfbfb;
+}
+/*头部导航开始*/
+.head_separate{
+    margin-top: 60px;
+}
+.navbar{
+    margin: 0;
+    z-index: 9999999;
+    background: #333;
+    border-bottom: none;
+    box-shadow: inset 0px 0px 5px #333;
+    height: 90px;
+    overflow: hidden;
+    padding: 15px 0;
+}
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+    line-height: 30px;
+}
+.navbar .collapse.navbar-collapse{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+.navbar .navbar-brand{
+    padding:7px 0;
+    margin: 0!important;
+}
+.navbar-brand, .navbar-nav>li>a{
+    text-shadow: none;
+}
+.navbar .nav>li{
+    font-size: 16px;
+    border-radius: 1px solid rgba(0,0,0);
+   
+    width: 148px;
+    text-align: center;
+    position: relative;
+}
+.navbar .nav>li:after{
+    position: absolute;
+    content: '';
+    width: 1px ;
+    height: 40px;
+    background:#fff;
+    right: 0;
+    top: 10px;
+}
+.navbar .nav>li:last-child{
+    border-right: none;
+    margin-left:65px;
+}
+.navbar .nav>li:nth-child(5):after,.navbar .nav>li:last-child:after{
+    background: transparent;
+}
+.navbar-fixed-top{
+    border-width: 0;
+}
+.navbar .nav>li a{
+    font-size: 16px;
+   
+    text-align: center;
+}
+.navbar .nav>li a:hover{
+    color: #f39f64;
+}
+.navbar .nav>li .active{
+    position: relative;
+    
+}
+.navbar .nav>li .active:before{
+    position: absolute;
+    content: '';
+
+}
+.navbar .navbar-nav{
+    margin-left: 80px;
+}
+.navbar .nav>li:last-child a{
+    display: inline-block;
+    padding: 15px 0;
+}
+.navbar_after{
+    position: relative!important;
+    color: #f39f64!important;
+    font-size: 12px!important;
+}
+.navbar_after:after{
+    content: '';
+    position: absolute;
+    height:3px;
+    background: #f39f64;
+    width: 40px;
+    bottom: 9px;
+    left: 50%;
+    margin-left: -20px;
+    transition: all 1s;
+}
+.navbar_before{
+    transition: all 1s;
+}
+.navbar .nav>li:hover .navbar_before{
+    margin-top: -60px;
+}
+.container-fluid{
+    width: 1200px;
+    height: 60px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    overflow: hidden;
+}
+
+.navbar1{
+    background: #f39f64;
+    box-shadow: none;
+}
+.navbar1 .container-fluid {
+    width: 1200px;
+    height: 60px;
+    border-radius: 20px;
+    
+    overflow: hidden;
+}
+/*头部导航结束*/
+
+
+

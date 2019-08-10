@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="js/wow.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>  
+	<script src="js/jquery.kxbdMarquee.js"></script>
+	<script type="text/javascript" src="js/video.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="fonts/iconfont.css">
+	<!-- <link rel="stylesheet" type="text/css" href="icons/entypo.css"> -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<script type="text/javascript">
+			 //发送验证码
+			  var InterValObj; //timer变量，控制时间
+				var count = 60; //间隔函数，1秒执行
+				var curCount;//当前剩余秒数
+				var code = ""; //验证码
+				var codeLength = 6;//验证码长度
+				function sendMessage() {
+				curCount = count;
+				var dealType; //验证方式
+				if ($("#user_mobile").attr("checked") == true) {
+				    dealType = "phone";
+				}
+				else {
+				    dealType = "email";
+				}
+				//产生验证码
+				for (var i = 0; i < codeLength; i++) {
+				    code += parseInt(Math.random() * 9).toString();
+				}
+				//设置button效果，开始计时
+				    $("#sendVerificationCode").attr("disabled", "true");
+				    $("#sendVerificationCode").val( + curCount + "秒再获取");
+				    InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+				}
+				//timer处理函数
+				function SetRemainTime() {
+				    if (curCount == 0) {                
+				        window.clearInterval(InterValObj);//停止计时器
+				        $("#sendVerificationCode").removeAttr("disabled");//启用按钮
+				        $("#sendVerificationCode").val("重新发送验证码");
+				        code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效    
+				    }
+				    else {
+				        curCount--;
+				        $("#sendVerificationCode").val( + curCount + "秒再获取");
+				    }
+			}
+		
+		function code_biu(){
+			sendMessage();
+		}
+	</script>
+</head>
+<body>
+	<!-- 鼠标滑动出现导航开始 -->
+		<div class="nav_show">
+			<nav class="navbar navbar1 navbar-default " role="navigation">
+				<div class="container-fluid"> 
+
+					<!-- 大屏显示 -->
+					<div class="collapse navbar-collapse" id="example-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html" class="logo_a"><img src="images/orange-logo.png" class="show_img"></a>
+							</li>
+							<li>
+								<a href="index.html"  class="active navbar_before">网站首页</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">求婚案例</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">主题风格</a>
+							</li>
+							<li>
+								<a href="customized.html" class="navbar_before">我要定制</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">求婚百科</a>
+							</li>
+							<li>
+								<div class="top_tel">
+									<div class="rexian">全国统一浪漫服务热线</div>
+									<div class="top_right_number">
+										<img src="images/tel.png" style="margin-right: 3px;margin-top: -3px;">400-1388-521&nbsp;|&nbsp;
+										<img src="images/mobile_phone.png">18612333425
+									</div>
+								</div>
+								<div class="top_right">
+									<a href="login.html">登录</a><br><hr>
+									<a href="register.html">注册</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	<!-- 鼠标滑动出现导航结束 -->
+	<!-- 头部导航开始 -->
+		<div class="nav_hide">
+			<div class="top_nav row">
+				<div class="top_nav_div">
+					<a href="index.html" class="logo_a"><img src="images/orange-logo.png" class="left_img"></a>
+					<span class="img_text">如何策划一场与众不同的求婚<br>别担心，我们已为您准备好了一切</span>
+					<div class="top_float">
+						<div class="top_tel">
+							<div class="rexian">全国统一浪漫服务热线</div>
+							<div class="top_right_number">
+								<img src="images/tel.png" style="margin-right: 3px;margin-top: -3px;">400-1388-521&nbsp;|&nbsp;
+								<img src="images/mobile_phone.png">18612333425
+							</div>
+						</div>
+						<div class="top_right">
+							<a href="login.html">登录</a><br><hr>
+							<a href="register.html">注册</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<nav class="navbar navbar1 navbar-default" role="navigation">
+				<div class="container-fluid"> 
+					<!-- 大屏显示 -->
+					<div class="collapse navbar-collapse" id="example-navbar-collapse">
+						
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html"  class="active navbar_before">网站首页</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">求婚案例</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">主题风格</a>
+							</li>
+							<li>
+								<a href="customized.html" class="navbar_before">我要定制</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">求婚百科</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	<!-- 头部导航结束 -->
+	
+	<!-- 注册开始 -->
+		<div class="login_container row">
+			<div class="login_left">
+				<img src="images/people.png" class="information_img">
+			</div>
+			<div class="login_right">
+				<div class="login_div_content fixed_div_code">
+                    <h3><strong>验证码登录</strong></h3>
+                    <div class="form_sign">
+                    	<div>
+                    		<input type="text" name="" placeholder="请输入手机号" class="form-control  in_control1">
+                    	</div>
+                    	
+                    	<div class="row code_div">
+                    		<input type="text" name="" placeholder="请输入验证码" id="VerificationCode" class="form-control in_control2">
+                    		<input type="button" id="sendVerificationCode"  value="验证码"  class="code_btn in_control3" onclick="code_biu()">
+                    	</div>
+                    	<div class="user_div">
+                    		<div class="bottom">
+                    			<a href="login.html">账号密码登录</a>
+                    			<a href="register.html">去注册</a>
+                    		</div>
+                    		
+                    	</div>
+                    
+                    	<div class="sign_div">
+                    		<input type="submit" name="" placeholder="登录" class="in_control4">
+                    	</div>
+                    	<img src="images/people.png" class="people_img">
+                    	<h4>用行动证明爱情</h4>
+                    </div>
+                    
+                </div>
+			</div>
+		</div>
+	<!-- 注册结束 -->
+
+	<!-- 底部开始 -->
+		<div class="footer">
+			<div class="footer_container row">
+					<div class="footer_div">
+						<h4><strong>求婚服务</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+					<div class="footer_div">
+						<h4><strong>作品案例</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+					<div class="footer_div">
+						<h4><strong>求婚工具</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+					<div class="footer_div">
+						<h4><strong>攻略·社区</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+                    <div class="footer_div">
+						<h4><strong>关于我们</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+                    <div class="footer_div">
+						<h4><strong>婚庆服务</strong></h4>
+						<div class="erweima row">
+                        	<!--二维码开始-->
+                            <div id="myTabContent" class="tab-content">
+                                <div class="tab-pane fade row" id="footer1">
+                                    <div class="footer_image row">
+                                        <img src="images/xiaochengxu.png">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade row" id="footer2">
+                                    <div class="footer_image row">
+                                       <img src="images/weibo.png">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade row" id="footer3">
+                                    <div class="footer_image row">
+                                        <img src="images/gongzhonghao.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <ul class="row list-nav nav nav-tabs">
+                                <li class="">
+                                	<a href="#footer1" data-toggle="tab" >
+                                		<img src="images/小程序.png">
+                                	</a>
+                                </li>
+                                <li class="">
+                                	<a href="#footer2" data-toggle="tab">
+                                		<img src="images/公众号.png">	
+                                	</a>		
+                                </li>
+                                <li class="">
+                                	<a href="#footer3" data-toggle="tab" >
+                               			<img src="images/微博.png">
+                               		</a> 
+                               </li>
+                            </ul>
+                       	 <!--二维码结束-->
+                        </div>
+
+                        <div class="erweima_right">
+                        	多对一贴心服务<br>策划师平均每月只承接1.5场求婚
+                        </div>
+					</div>
+			</div>
+			<div class="search_link">
+				
+				<!-- 导航区 -->
+				<ul class="nav nav-tabs" role="tablist">
+				  <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">热门搜索</a></li>
+				  <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">友情链接</a></li>
+				</ul> 
+				 
+				<!-- 面板区 --> 
+				<div class="tab-content">
+				  <div role="tabpanel" class="tab-pane active in" id="home">
+				  		<div class="search_hot">
+							<a href="">广场求婚</a>
+							<a href="">求婚策划</a>
+							<a href="">求婚创意</a>
+							<a href="">求婚视频</a>
+						</div>
+				  </div>
+				  <div role="tabpanel" class="tab-pane" id="profile">
+				  		<div class="friendship_link">
+							<a href="">一遇求婚</a>
+							
+						</div>
+				  </div>
+				
+				</div>
+			</div>
+			
+			<div class="footer_end">
+				<div class="footer_end1">
+					<a href="">隐私保护</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">企业理念</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">品质保障</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">产品服务</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">联系我们</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">公司介绍</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">一遇十年</a>
+				</div>
+				<div class="footer_end2">
+                    	全国免费咨询热线：400-1388-521&nbsp;24小时值班热线：18612333425&nbsp;全国统一客服&nbsp;-&nbsp;QQ：284218433&nbsp;微信：18612333425&nbsp;微博：求婚创意策划-OM一遇<br>
+                        Copyright © 2008-2019 一遇OM私人定制浪漫创意求婚策划公司 (本网站部分图片和视频来源于网络，如有侵权，请及时联系我们删除)。京ICP备17068269号-3                    
+                </div>
+			</div>
+		</div>
+	<!-- 底部结束 -->
+    
+
+	<script>
+	  
+	  //底部标签页开始
+	  $(document).ready(function(){
+			$(".erweima .list-nav li:first").addClass('active');
+			$(".erweima .tab-content .tab-pane:first").addClass('active in');
+
+			$('.computer_btn').click(function(){
+				$('.fixed_div_weixin').hide();
+				$('.fixed_div_code').show();
+			})
+			$('.erweima_btn').click(function(){
+				
+				$('.fixed_div_code').hide();
+				$('.fixed_div_weixin').show();
+			})
+	  })
+
+	 
+	</script>
+</body>
+</html>

@@ -1,0 +1,2679 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Page-enter" content='revealtrans(duration=1,transition=6)'>
+	<script src="js/wow.min.js"></script>
+	<!-- <script src="js/jquery.min.js"></script> -->
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>  
+	<script src="js/jquery.kxbdMarquee.js"></script>
+	<script type="text/javascript" src="js/video.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<!-- <script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+	<script src="js/script.js"></script> -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="css/video-js.min.css"> 
+	<link rel="stylesheet" type="text/css" href="css/video_lunbo.css">
+	<link rel="stylesheet" href="fonts/iconfont.css">
+	<!--<link rel="stylesheet" type="text/css" media="screen" href="css/player.css" />-->
+	<!-- <link rel="stylesheet" type="text/css" href="icons/entypo.css"> -->
+	<link rel="stylesheet" href="css/viewer.css">
+	<link rel="stylesheet" type="text/css" href="css/music_style.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script type="text/javascript">
+			 //发送验证码
+			  	var InterValObj; //timer变量，控制时间
+				var count = 60; //间隔函数，1秒执行
+				var curCount;//当前剩余秒数
+				var code = ""; //验证码
+				var codeLength = 6;//验证码长度
+				function sendMessage(type) {
+					curCount = count;
+					var dealType; //验证方式
+					if ($("#mobile_phone").attr("checked") == true) {
+					    dealType = "phone";
+					}
+					else {
+					    dealType = "email";
+					}
+					//产生验证码
+					for (var i = 0; i < codeLength; i++) {
+					    code += parseInt(Math.random() * 9).toString();
+					}
+					if(type==1){
+						//设置button效果，开始计时
+					    $("#sendVerificationCode").attr("disabled", "true");
+					    $("#sendVerificationCode").val( + curCount + "秒再获取");
+					}else{
+						//设置button效果，开始计时
+					    $("#sendVerificationCode1").attr("disabled", "true");
+					    $("#sendVerificationCode1").val( + curCount + "秒再获取");
+					}
+					InterValObj = setInterval(function () {SetRemainTime(type);}, 1000);
+					// InterValObj = window.setInterval(SetRemainTime(type), 1000); //启动计时器，1秒执行一次
+				}
+				//timer处理函数
+				function SetRemainTime(type) {
+						
+				    if (curCount == 1) {  
+				        window.clearInterval(InterValObj);//停止计时器
+				        if(type == 1){
+					        $("#sendVerificationCode").removeAttr("disabled");//启用按钮
+					        $("#sendVerificationCode").val("重新发送验证码");
+					    }else{
+					    	$("#sendVerificationCode1").removeAttr("disabled");//启用按钮
+					        $("#sendVerificationCode1").val("重新发送验证码");
+					    }
+				        code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效    
+				    }else{
+				        curCount--;
+				        if(type == 1){
+				        	$("#sendVerificationCode").val( + curCount + "秒再获取");
+				        }else{
+				        	$("#sendVerificationCode1").val( + curCount + "秒再获取");	
+				        }
+				        
+				    }
+				}
+
+		
+		function code_biu(type){
+			sendMessage(type);
+		}
+	
+	</script>
+</head>
+<body>
+	<!-- 鼠标滑动出现导航开始 -->
+		<div class="nav_show">
+			<nav class="navbar navbar1 navbar-default " role="navigation">
+				<div class="container-fluid"> 
+
+					<!-- 大屏显示 -->
+					<div class="collapse navbar-collapse" id="example-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html" class="logo_a"><img src="images/orange-logo.png" class="show_img"></a>
+							</li>
+							<li>
+								<a href="index.html"  class="active navbar_before">网站首页</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">求婚案例</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">主题风格</a>
+							</li>
+							<li>
+								<a href="customized.html" class="navbar_before">我要定制</a>
+							</li>
+							<li>
+								<a href="encyclopedias.html" class="navbar_before">求婚百科</a>
+								<ul class="nav_dropdown1">
+									<li>
+										<a href="strategy.html">求婚攻略</a>
+									</li>
+									<li>
+										<a href="proposal_QW.html">求婚问答</a>
+									</li>
+									<li>
+										<a href="">求婚社区</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div class="top_tel">
+									<div class="rexian">全国统一浪漫服务热线</div>
+									<div class="top_right_number">
+										<img src="images/tel.png" style="margin-right: 3px;margin-top: -3px;">400-1388-521&nbsp;|&nbsp;
+										<img src="images/mobile_phone.png">18612333425
+									</div>
+								</div>
+								<div class="top_right">
+									<a href="login.html">登录</a><br><hr>
+									<a href="register.html">注册</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	<!-- 鼠标滑动出现导航结束 -->
+	<!-- 头部导航开始 -->
+		<div class="nav_hide">
+			<div class="top_nav row">
+				<div class="top_nav_div">
+					<a href="index.html" class="logo_a"><img src="images/orange-logo.png" class="left_img"></a>
+					<span class="img_text">如何策划一场与众不同的求婚<br>别担心，我们已为您准备好了一切</span>
+					<div class="top_float">
+						<div class="top_tel">
+							<div class="rexian">全国统一浪漫服务热线</div>
+							<div class="top_right_number">
+								<img src="images/tel.png" style="margin-right: 3px;margin-top: -3px;">400-1388-521&nbsp;|&nbsp;
+								<img src="images/mobile_phone.png">18612333425
+							</div>
+						</div>
+						<div class="top_right">
+							<a href="login.html">登录</a><br><hr>
+							<a href="register.html">注册</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<nav class="navbar navbar1 navbar-default" role="navigation">
+				<div class="container-fluid"> 
+					<!-- 大屏显示 -->
+					<div class="collapse navbar-collapse" id="example-navbar-collapse">
+						
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html"  class="active navbar_before">网站首页</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">求婚案例</a>
+							</li>
+							<li>
+								<a href="" class="navbar_before">主题风格</a>
+							</li>
+							<li>
+								<a href="customized.html" class="navbar_before">我要定制</a>
+							</li>
+							<li>
+								<a href="encyclopedias.html" class="navbar_before">求婚百科</a>
+								<ul class="nav_dropdown">
+									<li>
+										<a href="strategy.html">求婚攻略</a>
+									</li>
+									<li>
+										<a href="proposal_QW.html">求婚问答</a>
+									</li>
+									<li>
+										<a href="">求婚社区</a>
+									</li>
+								</ul>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	<!-- 头部导航结束 -->
+
+	
+	<!-- banner开始 -->
+		<div class="index_banner">
+			<div id="myCarousel" class="carousel slide">
+				<!-- 轮播（Carousel）指标 -->
+				<div class="carouselDiv">
+					<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active">
+								<div class="bannerImg">
+									<video class='video' id="videoLittle"  muted loop >
+					                    <source src="http://www.one-meet.com/wp-content/uploads/2017/06/SYPT4.23.mp4" type="video/mp4">
+					                </video>
+								</div>
+							</li>
+							<li data-target="#myCarousel" data-slide-to="1">
+								<div class="bannerImg">
+									<img src="images/banner1.jpg" alt="First slide">
+								</div>
+							</li>
+							<li data-target="#myCarousel" data-slide-to="2">
+								<div class="bannerImg">
+									<img src="images/banner2.jpg" alt="Third slide">
+								</div>
+							</li>
+							<li data-target="#myCarousel" data-slide-to="3">
+								<div class="bannerImg">
+									<img src="images/banner3.png" alt="Third slide">
+								</div>
+							</li>
+					</ol>  
+				</div> 
+				<!-- 轮播（Carousel）项目 -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<video class='video' id="video" autoplay muted loop >
+		                    <source src="http://www.one-meet.com/wp-content/uploads/2017/06/SYPT4.23.mp4" type="video/mp4">
+		                </video>
+					</div>
+					<div class="item">
+						<img src="images/banner1.png">	
+					</div>
+					<div class="item">
+						<img src="images/banner2.png">
+					</div>
+					<div class="item">
+						<img src="images/banner3.jpg">
+					</div>
+				</div>
+				<!-- 轮播（Carousel）导航 -->
+				<!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a> -->
+			</div>  
+		<img src="images/banner_bottom.png" class="banner_bottom">
+		</div>
+	<!-- banner结束 -->
+
+	<!-- 公司介绍及活动开始 -->
+		<div class="company_introduction">
+			<div class="company_introduction_div">
+				<div class="company_introduction_ul row">
+					<ul>
+						<li>
+							<img src="images/write.png">
+							<h3>创意策划</h3>
+							<p>策划过接近千万级的创意求婚公司</p>
+
+						</li>
+						<li>
+							<img src="images/case.png">
+							<h3>优质案例</h3>
+							<p>案例被模仿抄袭近千次的求婚公司</p>
+						</li>
+						<li>
+							<img src="images/service.png">
+							<h3>优质服务</h3>
+							<p>更是一家多对一服务的求婚公司</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<div class="company_activity">
+				<h4 class="company_activity_title">
+					服务全国及海外的私人定制求婚策划，<br>已经为<span class="counter1" id="#count-number">29218</span>对客户提供服务
+				</h4>
+				<a href="">
+					<div class="company_activity_img">	
+						<img src="images/huodong.jpg" class="company_activity_img1">
+					</div>
+				</a>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.waypoints.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.countup.js" ></script>
+
+		 	<script type="text/javascript">
+				$('.counter1').countUp();
+			</script>
+	<!-- 公司介绍及活动结束 -->
+	
+	<!-- 求婚流程开始 -->
+		<div class="technological">
+			<div class="public_title">
+				<div class="public_title1">服务流程</div>
+				<div class="public_title2">SERVICE PROCESS</div>
+				<div class="public_title3">每一个视频案例都是一场精心策划的主题</div>
+			</div>
+			<div class="technological_container row">
+				<div class="technological_div">
+					<div class="technological_top">
+						<img src="images/lc_01.png">
+					</div>
+
+					<div class="technological_bottom row">
+						<ul>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="technological_div">
+					<div class="technological_top">
+						<img src="images/lc_02.png">
+					</div>
+
+					<div class="technological_bottom row">
+						<ul>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="technological_div">
+					<div class="technological_top">
+						<img src="images/lc_03.png">
+					</div>
+
+					<div class="technological_bottom row">
+						<ul>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="images/lc1.png"><br>
+									<span>创意求婚</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+			
+			
+		</div>
+	<!-- 求婚流程结束 -->
+	
+	<!-- 视频开始 -->
+		<div class="mobile_videos">
+			 <div class="public_title">
+				<div class="public_title1">作品欣赏</div>
+				<div class="public_title2">APPRECIATION OF WORKS</div>
+				<div class="public_title3">每一个视频案例都是一场精心策划的主题</div>
+			</div>
+
+			<div class="iphone_video row">
+				<div class="iphone_video_left">
+					<img src="images/iphonex.png">
+					<div class="video_div">
+						<video loop src="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E6%84%9F%E5%8A%A8%E8%B6%85%E6%84%9F%E5%8A%A8%E6%88%91%E5%8F%AF%E4%BB%A5%E5%93%AD500%E6%AC%A1.m4v" id="video" poster="images/IPHONEOM.png"></video>
+					</div>
+
+					<!-- 文字描述开始 -->
+					<div class="text_video">
+						<h4>@视频一</h4>
+						<p>
+							视频描述视频描述视频描述视频描述视频描述视频描述
+						</p>
+					</div>
+					<!-- 文字描述结束 -->
+				</div>
+				<div class="iphone_video_right">
+					<ul>
+						<li>
+							<div class="video_square video_div4" >
+								<img src="https://www.onemeet.com/uploads/images/20190110/7e47cca3b35c965f87db4900c670076a.png" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E6%88%90%E9%83%BD%E7%8E%8B%E5%85%88%E7%94%9F%E5%AD%A6%E6%A0%A1%E6%93%8D%E5%9C%BA%E6%B1%82%E5%A9%9A.m4v">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频一</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+							<div class="video_square video_div5" >
+								<img src="https://www.onemeet.com/uploads/images/20190110/919e86031029a113b5f0815c4ddddb49.png" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E4%B8%8A%E6%B5%B7%E7%BD%91%E7%BA%A2%E5%BA%84%E5%BA%84%E6%A0%A1%E5%9B%AD%E5%B9%BF%E5%9C%BA%E6%B1%82%E5%A9%9AMV%201.m4v">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频二</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+							<div class="video_square video_div6">
+								<img src="https://www.onemeet.com/uploads/images/20190110/c9c1b24ac332292bed5b72c1d44ea18c.png" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E5%A4%A7%E5%85%B4%E4%BA%A6%E5%BA%84%E5%90%95%E5%85%88%E7%94%9F%E4%BD%93%E8%82%B2%E5%9C%BA%E6%B1%82%E5%A9%9A.m4v?q-sign-a">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频三</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+						</li>
+						<li>
+							<div class="video_square video_div1" >
+								<img src="https://www.onemeet.com/uploads/images/20190127/fb4c0d11945ab47b7979cf5f73ebd8fe.jpg" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E6%AD%A6%E6%B1%89%E6%9B%B9%E5%85%88%E7%94%9F%E6%B5%AA%E6%BC%AB%E6%B0%94%E7%90%83%E4%B8%BB%E9%A2%98%E6%B1%82%E5%A9%9A%201.m4v">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频四</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+							<div class="video_square video_div2" >
+								<img src="https://www.onemeet.com/uploads/images/20190127/45c13d22e4e9777bb6d14084121bc6f4.jpg" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E6%AD%A6%E6%B1%89%E6%9B%B9%E5%85%88%E7%94%9F%E6%B5%AA%E6%BC%AB%E6%B0%94%E7%90%83%E4%B8%BB%E9%A2%98%E6%B1%82%E5%A9%9A%201.m4v">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频五</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+						</li>
+						<li>
+							<div class="video_square video_div4" >
+								<img src="https://www.onemeet.com/uploads/images/20190110/919e86031029a113b5f0815c4ddddb49.png" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E4%B8%8A%E6%B5%B7%E7%BD%91%E7%BA%A2%E5%BA%84%E5%BA%84%E6%A0%A1%E5%9B%AD%E5%B9%BF%E5%9C%BA%E6%B1%82%E5%A9%9AMV%201.m4v">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频六</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+							<div class="video_square video_div5" >
+								<img src="https://www.onemeet.com/uploads/images/20190110/4e0e6c877a448ba79ef3b7f7d5221e26.png" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E4%B8%BA%E7%94%B7%E5%8F%8B%E7%94%9F%E6%97%A5%E7%AD%96%E5%88%92%E5%8F%8D%E8%A2%AB%E6%B1%82%E5%A9%9A.m4v?q-sign-algorithm=">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频七</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+							<div class="video_square video_div6" >
+								<img src="https://www.onemeet.com/uploads/images/20190215/3b107eff6e1f29ee7446654a0fe298a6.png" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E6%AD%A6%E6%B1%89%E6%B6%82%E5%85%88%E7%94%9F%E5%88%AB%E5%A2%85%E6%B1%82%E5%A9%9A%E8%A7%86%E9%A2%91.m4v">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频八</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+						</li>
+						<li>
+							<div class="video_square video_div1" >
+								<img src="https://www.onemeet.com/uploads/images/20190423/c1a1ddc2c636aba4aac02497f460575e.jpg" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E4%B8%8A%E6%B5%B7%E5%90%B4%E5%85%88%E7%94%9F%E8%A5%BF%E9%A4%90%E5%8E%85%E6%B1%82%E5%A9%9A%E5%92%A8%E8%AF%A2.m4v">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频九</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+							<div class="video_square video_div2" >
+								<img src="https://www.onemeet.com/uploads/images/20190127/dd93df75c50e570bf622f6285e4a8d87.jpg" class="video_spuare_img">
+								<div class="video_btn">
+									<img src="images/bofang.png" class="bofang" file="https://om4001388521-1258313538.cos.ap-beijing.myqcloud.com/%E8%A7%86%E9%A2%91/%E6%89%8B%E6%9C%BA%E8%A7%86%E9%A2%91%E6%A1%88%E4%BE%8B/%E4%B8%8A%E6%B5%B7%E5%90%B4%E5%85%88%E7%94%9F%E8%A5%BF%E9%A4%90%E5%8E%85%E6%B1%82%E5%A9%9A%E5%92%A8%E8%AF%A2.m4v">  
+									<img src="images/zanting.png" class="zanting">
+								</div>
+								<!-- 文字描述开始 -->
+								<div class="text_video_div"></div>
+								<div class="text_video">
+									<h4>@视频十</h4>
+									<p>
+										视频描述视频描述视频描述视频描述视频描述视频描述
+									</p>
+								</div>
+								<!-- 文字描述结束 -->
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.bofang').click(function(){
+					var video_src=$(this).attr('file');
+					// if(video_src==$('#video').attr('src')){
+					// 	var v = document.getElementById("video"); 
+					// 	$(this).css('display','none');
+					// 	$(this).parent().children('.zanting').css('display','block');
+					// 	v.pause();
+					// 	// $("#video").attr('src',"")
+					// }else{
+						$("#video").attr('src',video_src);
+						var v = document.getElementById("video"); 
+						v.play();
+						document.getElementById("audio").pause();
+						$('.playback').removeClass('playing');
+						$('.icon-pause').addClass('icon-play').removeClass('icon-pause');
+        
+						$(this).css('display','none');
+						$(this).parent().children('.zanting').css('display','block');
+						$(this).parent().parent().siblings().children().children('.zanting').css('display','none');
+						$(this).parent().parent().siblings().children().children('.bofang').css('display','block');
+						$(this).parent().parent().parent().siblings().children().children().children('.zanting').css('display','none');
+						$(this).parent().parent().parent().siblings().children().children().children('.bofang').css('display','block');
+
+						var text=$(this).parent().siblings('.text_video').children('h4').text();
+
+						var text1=$(this).parent().siblings('.text_video').children('p').text();
+						
+						$('.iphone_video_left .text_video h4').html(text);
+						
+						$('.iphone_video_left .text_video p').html(text1);
+						//监听音乐是否在播放
+					//}
+				})
+				$('.zanting').click(function(){
+					$('.zanting').css('display','none');
+					$('.bofang').css('display','block');
+					var v = document.getElementById("video"); 
+						v.pause();
+						//$("#video").attr('src',"")
+				})
+			})
+			
+		</script>
+	<!-- 视频结束 -->
+
+	<!-- 套系开始 -->
+		<div class="suit">
+			<div class="public_title">
+				<div class="public_title1">推荐定制套系</div>
+				<div class="public_title2">SERVICE PROCESS</div>
+				<div class="public_title3">每一个视频案例都是一场精心策划的主题</div>
+			</div>
+			<div class="suit_container row">
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit1.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit2.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit3.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit4.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit5.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit6.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit7.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit8.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="suit_div">
+					<a href="detail.html">
+						<div class="suit_img">
+							<img src="images/suit9.jpg">
+						</div>
+						<div class="suit_text">
+							<div class="suit_instroduction">
+								<h4>[轻奢场布定制]</h4>
+								
+							</div>
+							<hr>
+							<div class="suit_price row">
+								<div class="suit_left">
+									
+									<span class="jiage">￥</span>
+									<span class="jiage_num">1800</span>
+								</div>
+								<div class="suit_right">
+									
+									<span>已售 1128</span>
+									<a href="" class="suit_btn">预定</a>
+								</div>
+							</div>
+							<div class="ok_btn">
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				
+			</div>
+		</div>
+	<!-- 套系结束 -->
+
+	<!-- 歌单开始 -->
+		<div class="song_sheet">
+			<div class="public_title">
+				<div class="public_title1">精选歌单</div>
+				<div class="public_title2">SERVICE INTRODUCTION</div>
+				<div class="public_title3">一首专属于你们的歌，只为唱给心爱的人听</div>
+			</div>
+			<div class="song_sheet_container row">
+				<div class="song_sheet_left song_sheet_li">
+					<!-- <div id="background"></div> -->
+					<div id="player">
+						<div class="cover">
+							<div class="cover_zhegai"></div>
+						</div>
+						<div class="ctrl">
+							<div class="tag">
+								<strong>Title</strong>
+								<span class="artist"></span>
+								<span class="album"></span>
+							</div>
+							<div class="control">
+								<div class="left">
+									<div class="rewind icon"></div>
+									<div class="playback icon"></div>
+									<div class="fastforward icon"></div>
+								</div>
+								<div class="volume right">
+									<div class="mute icon left"></div>
+									<div class="slider left">
+										<div class="pace"></div>
+									</div>
+								</div>
+							</div>
+							<div class="progress_music">
+								<div class="slider">
+									<div class="loaded"></div>
+									<div class="pace"></div>
+								</div>
+								<div class="timer left">0:00</div>
+								<div class="right">
+									<div class="repeat icon"></div>
+									<div class="shuffle icon"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul id="playlist"></ul>
+
+				</div>
+				<div class="song_sheet_middle song_sheet_li">
+					
+					
+				</div>
+				<div class="song_sheet_right song_sheet_li">
+					<h5>求婚工具</h5>
+					<div class="song_sheet_right_con">
+						<a href="">
+							<span>
+								<img src="images/instru1.png">
+								<p>求婚方案</p>
+							</span>
+						</a>
+
+						<a href="">
+							<span>
+								<img src="images/instru2.png">
+								<p>求婚材料</p>
+							</span>
+						</a>
+						<a href="">
+							<span>
+								<img src="images/instru3.png">
+								<p>求婚音乐</p>
+							</span>
+						</a>
+						<a href="">
+							<span>
+								<img src="images/instru4.png">
+								<p>求婚视频</p>
+							</span>
+						</a>
+						<a href="">
+							<span>
+								<img src="images/instru5.png">
+								<p>求婚测试</p>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- 歌单结束 -->
+	
+	<!-- 客户评价开始-->
+	<div class="marquee1_div">
+	    <div class="public_title">
+			<div class="public_title1">客户感言</div>
+	        <div class="public_title2" >Testimonial</div>
+	        <div class="public_title3" >您对我们的信赖是对我们最大的支持</div>
+	    </div>
+	    <div id="marquee2">
+	        <ul>
+	            <li>
+	                <div class="well-item">
+	                    <div class="item_div correct">
+	                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                            <div class="flipper">
+	                                <div class="front">
+	                                    <!-- 前面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/2b9301c32880f11e49a6e08bce3529d7.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                    <div class="rotate_con">
+	                                        <div class="rotate_con_div">
+	                                            
+	                                            <div class="rotate_place">中国·背景</div>
+	                                            <div class="rotate_way">别墅区求婚</div>
+
+	                                            <div class="rotate_name">
+	                                                <span class="rotate_portrait">
+	                                                    <img src="" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                                </span>
+	                                                王先生
+
+	                                            </div>
+	                                            <div class="rotate_post">副总裁</div>
+	                                            <div class="rotate_pingjia_div">
+	                                            	<div class="rotate_pingjia">客户评价</div>
+	                                            	<p class="rotate_descoribe">该客户评价该客户评价该客户评价该客户评价该客户评价该客户评价</p>	
+	                                            </div>
+	                                            
+	                                        </div>
+	                                        
+	                                    </div>
+	                                </div>
+	                                <div class="back">
+	                                    <!-- 背面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/176ffc9c158cce97785d304103e888ec.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+
+	            <li>
+	                <div class="well-item">
+	                    <div class="item_div correct">
+	                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                            <div class="flipper">
+	                                <div class="front">
+	                                    <!-- 前面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/2b9301c32880f11e49a6e08bce3529d7.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                    <div class="rotate_con">
+	                                        <div class="rotate_con_div">
+	                                            
+	                                            <div class="rotate_place">中国·背景</div>
+	                                            <div class="rotate_way">别墅区求婚</div>
+
+	                                            <div class="rotate_name">
+	                                                <span class="rotate_portrait">
+	                                                    <img src="" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                                </span>
+	                                                王先生
+
+	                                            </div>
+	                                            <div class="rotate_post">副总裁</div>
+	                                            <div class="rotate_pingjia_div">
+	                                            	<div class="rotate_pingjia">客户评价</div>
+	                                            	<p class="rotate_descoribe">该客户评价该客户评价该客户评价该客户评价该客户评价该客户评价</p>	
+	                                            </div>
+	                                            
+	                                        </div>
+	                                        
+	                                    </div>
+	                                </div>
+	                                <div class="back">
+	                                    <!-- 背面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/176ffc9c158cce97785d304103e888ec.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	            <li>
+	                <div class="well-item">
+	                    <div class="item_div correct">
+	                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                            <div class="flipper">
+	                                <div class="front">
+	                                    <!-- 前面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190423/c1a1ddc2c636aba4aac02497f460575e.jpg" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                    <div class="rotate_con">
+	                                        <div class="rotate_con_div">
+	                                            
+	                                            <div class="rotate_place">中国·背景</div>
+	                                            <div class="rotate_way">别墅区求婚</div>
+
+	                                            <div class="rotate_name">
+	                                                <span class="rotate_portrait">
+	                                                    <img src="https://www.onemeet.com/uploads/images/20190422/2019c8732dd5e504c07b037ef66f9c62.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                                </span>
+	                                                王先生
+
+	                                            </div>
+	                                            <div class="rotate_post">副总裁</div>
+	                                            <div class="rotate_pingjia_div">
+	                                            	<div class="rotate_pingjia">客户评价</div>
+	                                            	<p class="rotate_descoribe">该客户评价该客户评价该客户评价该客户评价该客户评价该客户评价</p>	
+	                                            </div>
+	                                            
+	                                        </div>
+	                                        
+	                                    </div>
+	                                </div>
+	                                <div class="back">
+	                                    <!-- 背面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/176ffc9c158cce97785d304103e888ec.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	            <li>
+	                <div class="well-item">
+	                    <div class="item_div correct">
+	                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                            <div class="flipper">
+	                                <div class="front">
+	                                    <!-- 前面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/2b9301c32880f11e49a6e08bce3529d7.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                    <div class="rotate_con">
+	                                        <div class="rotate_con_div">
+	                                            
+	                                            <div class="rotate_place">中国·背景</div>
+	                                            <div class="rotate_way">别墅区求婚</div>
+
+	                                            <div class="rotate_name">
+	                                                <span class="rotate_portrait">
+	                                                    <img src="" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                                </span>
+	                                                王先生
+
+	                                            </div>
+	                                            <div class="rotate_post">副总裁</div>
+	                                            <div class="rotate_pingjia_div">
+	                                            	<div class="rotate_pingjia">客户评价</div>
+	                                            	<p class="rotate_descoribe">该客户评价该客户评价该客户评价该客户评价该客户评价该客户评价</p>	
+	                                            </div>
+	                                            
+	                                        </div>
+	                                        
+	                                    </div>
+	                                </div>
+	                                <div class="back">
+	                                    <!-- 背面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/176ffc9c158cce97785d304103e888ec.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	            <li>
+	                <div class="well-item">
+	                    <div class="item_div correct">
+	                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                            <div class="flipper">
+	                                <div class="front">
+	                                    <!-- 前面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190423/c1a1ddc2c636aba4aac02497f460575e.jpg" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                    <div class="rotate_con">
+	                                        <div class="rotate_con_div">
+	                                            
+	                                            <div class="rotate_place">中国·背景</div>
+	                                            <div class="rotate_way">别墅区求婚</div>
+
+	                                            <div class="rotate_name">
+	                                                <span class="rotate_portrait">
+	                                                    <img src="https://www.onemeet.com/uploads/images/20190422/2019c8732dd5e504c07b037ef66f9c62.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                                </span>
+	                                                王先生
+
+	                                            </div>
+	                                            <div class="rotate_post">副总裁</div>
+	                                            <div class="rotate_pingjia_div">
+	                                            	<div class="rotate_pingjia">客户评价</div>
+	                                            	<p class="rotate_descoribe">该客户评价该客户评价该客户评价该客户评价该客户评价该客户评价</p>	
+	                                            </div>
+	                                            
+	                                        </div>
+	                                        
+	                                    </div>
+	                                </div>
+	                                <div class="back">
+	                                    <!-- 背面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/176ffc9c158cce97785d304103e888ec.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	            <li>
+	                <div class="well-item">
+	                    <div class="item_div correct">
+	                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                            <div class="flipper">
+	                                <div class="front">
+	                                    <!-- 前面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/2b9301c32880f11e49a6e08bce3529d7.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                    <div class="rotate_con">
+	                                        <div class="rotate_con_div">
+	                                            
+	                                            <div class="rotate_place">中国·背景</div>
+	                                            <div class="rotate_way">别墅区求婚</div>
+
+	                                            <div class="rotate_name">
+	                                                <span class="rotate_portrait">
+	                                                    <img src="" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                                </span>
+	                                                王先生
+
+	                                            </div>
+	                                            <div class="rotate_post">副总裁</div>
+	                                            <div class="rotate_pingjia_div">
+	                                            	<div class="rotate_pingjia">客户评价</div>
+	                                            	<p class="rotate_descoribe">该客户评价该客户评价该客户评价该客户评价该客户评价该客户评价</p>	
+	                                            </div>
+	                                            
+	                                        </div>
+	                                        
+	                                    </div>
+	                                </div>
+	                                <div class="back">
+	                                    <!-- 背面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/176ffc9c158cce97785d304103e888ec.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	            <li>
+	                <div class="well-item">
+	                    <div class="item_div correct">
+	                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                            <div class="flipper">
+	                                <div class="front">
+	                                    <!-- 前面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190423/c1a1ddc2c636aba4aac02497f460575e.jpg" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                    <div class="rotate_con">
+	                                        <div class="rotate_con_div">
+	                                            
+	                                            <div class="rotate_place">中国·背景</div>
+	                                            <div class="rotate_way">别墅区求婚</div>
+
+	                                            <div class="rotate_name">
+	                                                <span class="rotate_portrait">
+	                                                    <img src="https://www.onemeet.com/uploads/images/20190422/2019c8732dd5e504c07b037ef66f9c62.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                                </span>
+	                                                王先生
+
+	                                            </div>
+	                                            <div class="rotate_post">副总裁</div>
+	                                            <div class="rotate_pingjia_div">
+	                                            	<div class="rotate_pingjia">客户评价</div>
+	                                            	<p class="rotate_descoribe">该客户评价该客户评价该客户评价该客户评价该客户评价该客户评价</p>	
+	                                            </div>
+	                                            
+	                                        </div>
+	                                        
+	                                    </div>
+	                                </div>
+	                                <div class="back">
+	                                    <!-- 背面内容 -->
+	                                    <img src="https://www.onemeet.com/uploads/images/20190422/176ffc9c158cce97785d304103e888ec.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	        </ul>
+	    </div>
+	    <!-- <script src="/static/home/slide/jquery.kxbdMarquee.js"></script> -->
+
+	    <script>
+
+	    (function(){
+	        $("#marquee2").kxbdMarquee({direction:"left"});
+	    })();
+
+	    </script>
+	</div>
+
+	<!-- 客户评价结束-->
+
+	<!-- 服务介绍开始 -->
+		<div class="service_introduction">
+			<div class="public_title">
+				<div class="public_title1">服务介绍</div>
+				<div class="public_title2">SERVICE INTRODUCTION</div>
+				<div class="public_title3">求婚是琐碎的但不是混乱的，按阶段有序推进工作</div>
+			</div>
+
+			<div class="service_introduction_container row">
+				<div class="service_introduction_div">
+					<a href="service.html#ser1">
+						<div class="service_introduction_img">
+							<img src="images/f1.png">
+							<div class="service_introduction_black"></div>
+						</div>
+						<div class="service_introduction_text">
+							<h4 class="service_introduction_title">浪漫创意<span>/Romantic creativity</span></h4>
+							<p class="service_introduction_decoration">情侣交往中，需要花费很多心思来不断的制造浪漫，让爱情更有味道，而对于浪漫的创意，我们一遇人有着自己的标准，每一段情感都是独一无二的经历，每一段经历都将是那么刻骨铭心，因此，每一场求婚都是一个主题，都是充满不同故事的创意环节和故事。</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="service_introduction_div">
+					<a href="service.html#ser2">
+						<div class="service_introduction_img">
+							<img src="images/f2.png">
+							<div class="service_introduction_black"></div>
+						</div>
+						<div class="service_introduction_text">
+							<h4 class="service_introduction_title">主题场布<span>/Theme field cloth</span></h4>
+							<p class="service_introduction_decoration">情侣交往中，需要花费很多心思来不断的制造浪漫，让爱情更有味道，而对于浪漫的创意，我们一遇人有着自己的标准，每一段情感都是独一无二的经历，每一段经历都将是那么刻骨铭心，因此，每一场求婚都是一个主题，都是充满不同故事的创意环节和故事。</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="service_introduction_div">
+					<a href="service.html#ser3">
+						<div class="service_introduction_img">
+							<img src="https://www.onemeet.com/uploads/images/20190110/919e86031029a113b5f0815c4ddddb49.png">
+							<div class="service_introduction_black"></div>
+						</div>
+						<div class="service_introduction_text">
+							<h4 class="service_introduction_title">求婚影视<span>/Propose Television</span></h4>
+							<p class="service_introduction_decoration">情侣交往中，需要花费很多心思来不断的制造浪漫，让爱情更有味道，而对于浪漫的创意，我们一遇人有着自己的标准，每一段情感都是独一无二的经历，每一段经历都将是那么刻骨铭心，因此，每一场求婚都是一个主题，都是充满不同故事的创意环节和故事。</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="service_introduction_div">
+					<a href="service.html#ser4">
+						<div class="service_introduction_img">
+							<img src="images/f4.png">
+							<div class="service_introduction_black"></div>
+						</div>
+						<div class="service_introduction_text">
+							<h4 class="service_introduction_title">求婚场地<span>/Courtship Arena</span></h4>
+							<p class="service_introduction_decoration">情侣交往中，需要花费很多心思来不断的制造浪漫，让爱情更有味道，而对于浪漫的创意，我们一遇人有着自己的标准，每一段情感都是独一无二的经历，每一段经历都将是那么刻骨铭心，因此，每一场求婚都是一个主题，都是充满不同故事的创意环节和故事。</p>
+						</div>
+					</a>
+				</div>
+				<div class="service_introduction_div">
+					<a href="service.html#ser5">
+						<div class="service_introduction_img">
+							<img src="https://www.onemeet.com/uploads/images/20190110/bfe76845d3d3f9e7484316ace7c849ac.png">
+							<div class="service_introduction_black"></div>
+						</div>
+						<div class="service_introduction_text">
+							<h4 class="service_introduction_title">个性定制<span>/Customized</span></h4>
+							<p class="service_introduction_decoration">情侣交往中，需要花费很多心思来不断的制造浪漫，让爱情更有味道，而对于浪漫的创意，我们一遇人有着自己的标准，每一段情感都是独一无二的经历，每一段经历都将是那么刻骨铭心，因此，每一场求婚都是一个主题，都是充满不同故事的创意环节和故事。</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="service_introduction_div">
+					<a href="service.html#ser6">
+						<div class="service_introduction_img">
+							<img src="images/f5.png">
+							<div class="service_introduction_black"></div>
+						</div>
+						<div class="service_introduction_text">
+							<h4 class="service_introduction_title">影棚设备<span>/Studio Equipment</span></h4>
+							<p class="service_introduction_decoration">情侣交往中，需要花费很多心思来不断的制造浪漫，让爱情更有味道，而对于浪漫的创意，我们一遇人有着自己的标准，每一段情感都是独一无二的经历，每一段经历都将是那么刻骨铭心，因此，每一场求婚都是一个主题，都是充满不同故事的创意环节和故事。</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="service_introduction_div">
+					<a href="service.html#ser7">
+						<div class="service_introduction_img">
+							<img src="https://www.onemeet.com/uploads/images/20190110/b1540812c1a026246920ecdba36f8484.png">
+							<div class="service_introduction_black"></div>
+						</div>
+						<div class="service_introduction_text">
+							<h4 class="service_introduction_title">求婚采访<span>/Proposal Interview</span></h4>
+							<p class="service_introduction_decoration">情侣交往中，需要花费很多心思来不断的制造浪漫，让爱情更有味道，而对于浪漫的创意，我们一遇人有着自己的标准，每一段情感都是独一无二的经历，每一段经历都将是那么刻骨铭心，因此，每一场求婚都是一个主题，都是充满不同故事的创意环节和故事。</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="service_introduction_div">
+					<a href="service.html#ser8">
+						<div class="service_introduction_img">
+							<img src="images/f8.png">
+							<div class="service_introduction_black"></div>
+						</div>
+						<div class="service_introduction_text">
+							<h4 class="service_introduction_title">专业演员<span>/Professional Actor</span></h4>
+							<p class="service_introduction_decoration">情侣交往中，需要花费很多心思来不断的制造浪漫，让爱情更有味道，而对于浪漫的创意，我们一遇人有着自己的标准，每一段情感都是独一无二的经历，每一段经历都将是那么刻骨铭心，因此，每一场求婚都是一个主题，都是充满不同故事的创意环节和故事。</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	<!-- 服务介绍结束 -->
+
+	<!-- 品牌实力开始 -->
+		<div class="brand_strength_container">
+			<div class="public_title">
+				<div class="public_title1">品牌实力</div>
+				<div class="public_title2">Brand strength</div>
+				<div class="public_title3">一遇最具创意的国内求婚领导者品牌</div>
+			</div>
+
+			<div class="brand_strength row">
+				<div class="brand_strength_decoration">
+					<h4 class="changjing_title">
+						<img src="https://www.onemeet.com/static/home/image/logo.png" alt="求婚策划、求婚创意、浪漫求婚、求婚">
+						<div>一遇OM私人订制创意求婚策划</div>
+					</h4>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一遇OM私人订制创意求婚策划隶属于北京一遇文化传播有限公司，专注于求婚表白、浪漫惊喜等创意策划与执行。提供专属定制求婚策划方案等服务，承接求婚策划_生日惊喜_道歉挽回_挽回爱情_爱情微电影_求婚MV拍摄及视频制作_婚庆策划_创意婚礼等服务。十年间已为9000多对浪漫情侣策划上千种经典求婚创意策划案例和千余场爱情挽回道歉策划。
+					</p>
+						<div class="changjing_icons row">
+							<!-- <span>
+								<i class="icon-map-marker"></i>
+								<a href="">北京</a>
+							</span>
+							<span>
+								<i class="icon-map-marker"></i>
+								<a href="">上海</a>
+							</span>
+							<span>
+								<i class="icon-map-marker"></i>
+								<a href="">成都</a>
+							</span>
+							<span>
+								<i class="icon-map-marker"></i>
+								<a href="">广州</a>
+							</span>
+							<span>
+								<i class="icon-map-marker"></i>
+								<a href="">深圳</a>
+							</span>
+							<span>
+								<i class="icon-map-marker"></i>
+								<a href="">杭州</a>
+							</span>
+							<span>
+								<i class="icon-map-marker"></i>
+								<a href="">天津</a>
+							</span>
+							<span>
+								<i class="icon-map-marker"></i>
+								<a href="">海外</a>
+							</span> -->
+							<img src="images/om-city.png">	
+						</div>
+
+				</div>
+
+				<div class="brand_strength_video">
+					<video id="my-video" class="video-js vjs-big-play-centered" playsinline controls preload="auto" height="100%" data-setup="{}" poster="images/poster.jpg" style="object-fit: cover;">
+		            	<source src="http://resource.one-meet.com/%E6%84%9F%E5%8A%A8%E8%B6%85%E6%84%9F%E5%8A%A8%E5%8F%AF%E4%BB%A5%E5%93%AD500%E6%AC%A1%E6%B1%82%E5%A9%9A%E5%88%9B%E6%84%8F%28%E4%B8%80%E9%81%87OneMeet%E6%B5%AA%E6%BC%AB%E6%B1%82%E5%A9%9A%E5%88%9B%E6%84%8F%E7%AD%96%E5%88%92%E5%85%AC%E5%8F%B8-%E7%A7%81%E4%BA%BA%E8%AE%A2%E5%88%B6TEL%EF%BC%9A18612333425%20%29.mp4?_=1" type="video/mp4"></source>
+		            </video>
+				</div>
+			</div>
+
+
+
+			<div class="pinpaishili row">
+				
+			</div>
+		</div>
+		<!-- 团队开始 -->
+		<!-- <div class="group_container">
+			<div class="group">
+				<div id="myCarousel3" class="carousel slide">
+
+					<div class="carouselDiv">
+						<ol class="carousel-indicators">
+							
+							<li data-target="#myCarousel3" data-slide-to="0" class="active">
+								求婚策划团队
+							</li>
+							<li data-target="#myCarousel3" data-slide-to="1">
+								场务统筹团队
+							</li>
+							<li data-target="#myCarousel3" data-slide-to="2">
+								摄影制作团队
+							</li>
+
+						</ol>  
+					</div> 
+
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="images/team1.png">
+						</div>
+						<div class="item">
+							<img src="images/team2.png">
+						</div>
+						<div class="item">
+							<img src="images/team3.png">
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div> -->
+		<!-- 团队结束 -->
+		<div class="our_team">
+			<div class="public_title">
+				<div class="public_title1">求婚团队</div>
+				<div class="public_title2"> PROPOSAL TEAM</div>
+				<div class="public_title3">是专业的团队，也是您的朋友，为您对接所有专项服务</div>
+			</div>
+
+			<img src="images/pteam.png">
+		</div>
+	<!-- 品牌实力结束 -->
+
+	
+
+	<!-- 合作伙伴开始 -->
+		<div class="cooperative_partner">
+			<div class="public_title">
+				<div class="public_title1">合作伙伴</div>
+				<div class="public_title2">SERVICE INTRODUCTION</div>
+				<div class="public_title3">是专业的策划师，也是您的朋友，为您对接所有专项服务</div>
+			</div>
+
+			<div class="cooperative_partner_container">
+			    <div id="marquee1">
+			        <ul>
+			            <li>
+			                <div class="cooperative_partner_logo">
+			                	<img src="images/tangchi.png">
+			                </div>
+			                <div class="cooperative_partner_decoration">
+			                	<h4>汤池印象</h4>
+			                	<p>
+			                		中国顶尖的婚礼摄像制作团队，拥有强大的前后期及标准化的制作流程，出片唯美，视频节奏感好。
+			                	</p>
+			                </div>
+			            </li>
+			            <li>
+			                <div class="cooperative_partner_logo">
+			                	<img src="images/tangchi1.png">
+			                </div>
+			                <div class="cooperative_partner_decoration">
+			                	<h4>香港汤池电影</h4>
+			                	<p>
+			                		中国婚礼电影行业的先驱，拥有电影级别的画面质感，其作品一直作为众多艺术高校的教科书范本。
+			                	</p>
+			                </div>
+			            </li>
+			            <li>
+			                <div class="cooperative_partner_logo">
+			                	<img src="images/niv.png">
+			                </div>
+			                <div class="cooperative_partner_decoration">
+			                	<h4>NICOPRODUCTION</h4>
+			                	<p>
+			                		婚礼行业高端照片拍摄团队，拍摄过众多明星艺人婚礼照片。
+			                	</p>
+			                </div>
+			            </li>
+			            <li>
+			                <div class="cooperative_partner_logo">
+			                	<img src="images/hotel.png">
+			                </div>
+			                <div class="cooperative_partner_decoration">
+			                	<h4>W酒店集团</h4>
+			                	<p>
+			                		W酒店拥有最震撼的黄浦江江景，好好先生与W酒店建立深度合作，订房有优惠哦。
+			                	</p>
+			                </div>
+			            </li>
+			            <li>
+			                <div class="cooperative_partner_logo">
+			                	<img src="images/fair.png">
+			                </div>
+			                <div class="cooperative_partner_decoration">
+			                	<h4>和平饭店</h4>
+			                	<p>
+			                		和平饭店是老牌五星级酒店，见证了上海的百年沧桑。和平房间拥有无遮挡的黄浦江江景
+			                	</p>
+			                </div>
+			            </li>
+			        </ul>
+			    </div>
+
+			    <script>
+
+			    (function(){
+			        $("#marquee1").kxbdMarquee({direction:"left"});
+			    })();
+
+			    </script>
+			</div>
+
+		</div>
+	<!-- 合作伙伴结束 -->
+	
+
+	<!-- 热门城市开始 -->
+		<div class="cities_hot">
+			<div class="public_title">
+				<div class="public_title1">热门城市</div>
+				<div class="public_title2">SERVICE INTRODUCTION</div>
+				<div class="public_title3">全球覆盖，让每个城市都留下我们甜蜜的足迹</div>
+			</div>
+
+			<div class="cities_hot_container row">
+				<div class="city_div">
+					<div class="city_div_img">
+						<img src="images/beijing.png">
+					</div>
+					<div class="city_name1">
+						<div>
+							<i class=" icon-map-marker"></i>北京
+							<div class="hr"></div>
+							<h4>Bei Jing</h4>
+						</div>
+					</div>
+					<div class="city_name">
+						<img src="images/beijing.jpg">
+						<div class="city_intro">
+							<h4>爱情故事</h4>
+							<div class="hr"></div>
+							<p>
+							北京一座承载众多回忆的城市，这里有三里屯的喧嚣，有什刹海的宁静，有全北京最有趣的798，有世外桃源般的湖心小岛金海湖，世贸天阶下的爱情告白，有小爸爸里齐天大圣踩着七彩祥云的爱情，这就是首都，北京一遇求婚策划公司总部，这就是北京。
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="city_div">
+					<div class="city_div_img">
+						<img src="images/hangzhou.png">
+					</div>
+					<div class="city_name1">
+						<div>
+							<i class=" icon-map-marker"></i>杭州
+							<div class="hr"></div>
+							<h4>Hang Zhou</h4>
+						</div>
+					</div>
+					<div class="city_name">
+						<img src="images/hangzhou.jpg">
+						<div class="city_intro">
+							<h4>爱情故事</h4>
+							<div class="hr"></div>
+							<p>
+							小桥流水人家的清净，古诗画中的秀丽风景，素有“人间天堂”的美誉，乌镇空灵寂静的下，萧山青绿唯美的风景中，白娘子与许仙的爱情故事，西湖边的完美邂逅，雷峰塔下的千年等待，只为一世等一人。
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="city_div">
+					<div class="city_div_img">
+						<img src="images/shenzhen.png">
+					</div>
+					<div class="city_name1">
+						<div>
+							<i class=" icon-map-marker"></i>深圳
+							<div class="hr"></div>
+							<h4>Shen Zhen</h4>
+						</div>
+					</div>
+					<div class="city_name">
+						<img src="images/shenzhen.jpg">
+						<div class="city_intro">
+							<h4>爱情故事</h4>
+							<div class="hr"></div>
+							<p>
+							这座城市给人一种清新、现代化的感觉，它年轻、激情、拼搏，灵气十足，它温暖、洋溢、充满了青春和梦想，国贸大厦的繁华，世界之窗的艺术，地王大厦的辉煌，南澳沙滩的最美海湾，为你而来。
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="city_div">
+					<div class="city_div_img">
+						<img src="images/chengdu.png">
+					</div>
+					<div class="city_name1">
+						<div>
+							<i class=" icon-map-marker"></i>成都
+							<div class="hr"></div>
+							<h4>Cheng Du</h4>
+						</div>
+					</div>
+					<div class="city_name">
+						<img src="images/chengdu.jpg">
+						<div class="city_intro">
+							<h4>爱情故事</h4>
+							<div class="hr"></div>
+							<p>
+							和我在成都的街头走一走 喔…直到所有的灯都熄灭了也不停留，你会挽着我的衣袖，我会把手揣进裤兜，走到玉林路的尽头，坐在小酒馆的门口。一曲《成都》不仅火了赵雷，还有这个城市所有美好，春熙路的繁华，宽窄巷子的古朴，高楼之上的露天求婚，双流机场草坪上的浪漫期许，最美的爱，在最美的城市，给最美的你。
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="city_div">
+					<div class="city_div_img">
+						<img src="images/shanghai.png">
+					</div>
+					<div class="city_name1">
+						<div>
+							<i class=" icon-map-marker"></i>上海
+							<div class="hr"></div>
+							<h4>Shang Hai</h4>
+						</div>
+					</div>
+					<div class="city_name">
+						<img src="images/shanghai.jpg">
+						<div class="city_intro">
+							<h4>爱情故事</h4>
+							<div class="hr"></div>
+							<p>
+							漫步上海街头，你会沉溺于它的富丽堂皇，找不到终点，你将随波逐流，情深深雨蒙蒙里外白渡桥的甜蜜倾诉，上海滩里冯程程许文强的幸福拥吻，风华正茂的你我，在正当年纪相遇，许下今生最重要的承诺。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- 热门城市结束 -->
+
+	<!-- 求婚百科开始 -->
+		<div class="encyclopedias">
+			<div class="public_title">
+				<div class="public_title1">求婚百科</div>
+				<div class="public_title2">SERVICE INTRODUCTION</div>
+				<div class="public_title3">您所关心的所有浪漫创意都是我们的求婚热点</div>
+			</div>
+
+			<div class="encyclopedias_container row">
+				<ul>
+					<li>
+						<a href="strategy.html">
+							<div class="encyclopedias_show">
+								<div class="encyclopedias_div">
+									<h3>
+										<img src="images/en1.png">求婚攻略
+									</h3>
+									<div class="encyclopedias_type">
+										<a href="">求婚流程</a> /
+										<a href="">求婚录制</a> /
+										<a href="">现场布置</a> /
+										<a href="">求婚方案</a> 
+									</div>
+								</div>
+								<div class="encyclopedias_link">
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a href="strategy.html">
+							<div class="encyclopedias_hover">
+								<div class="encyclopedias_div">
+									<h3>
+										<img src="images/h_en1.png">求婚攻略
+									</h3>
+									<div class="encyclopedias_type">
+										<a href="">求婚流程</a> /
+										<a href="">求婚录制</a> /
+										<a href="">现场布置</a> /
+										<a href="">求婚方案</a> 
+									</div>
+								</div>
+								<div class="encyclopedias_link">
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="proposal_QW.html">
+							<div class="encyclopedias_show">
+								<div class="encyclopedias_div">
+									<h3>
+										<img src="images/en2.png">求婚问答
+									</h3>
+									<div class="encyclopedias_type">
+										<a href="">求婚流程</a> /
+										<a href="">求婚录制</a> /
+										<a href="">现场布置</a> /
+										<a href="">求婚方案</a> 
+									</div>
+								</div>
+								<div class="encyclopedias_link">
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a href="proposal_QW.html">
+							<div class="encyclopedias_hover">
+								<div class="encyclopedias_div">
+									<h3>
+										<img src="images/h_en2.png">求婚问答
+									</h3>
+									<div class="encyclopedias_type">
+										<a href="">求婚流程</a> /
+										<a href="">求婚录制</a> /
+										<a href="">现场布置</a> /
+										<a href="">求婚方案</a> 
+									</div>
+								</div>
+								<div class="encyclopedias_link">
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="encyclopedias.html">
+							<div class="encyclopedias_show">
+								<div class="encyclopedias_div">
+									<h3>
+										<img src="images/en3.png">社区
+									</h3>
+									<div class="encyclopedias_type">
+										<a href="">求婚流程</a> /
+										<a href="">求婚录制</a> /
+										<a href="">现场布置</a> /
+										<a href="">求婚方案</a> 
+									</div>
+								</div>
+								<div class="encyclopedias_link">
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a href="encyclopedias.html">
+							<div class="encyclopedias_hover">
+								<div class="encyclopedias_div">
+									<h3>
+										<img src="images/h_en3.png">社区
+									</h3>
+									<div class="encyclopedias_type">
+										<a href="">求婚流程</a> /
+										<a href="">求婚录制</a> /
+										<a href="">现场布置</a> /
+										<a href="">求婚方案</a> 
+									</div>
+								</div>
+								<div class="encyclopedias_link">
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+									<div class="link">
+										<a href="">北京婚纱照排行经典推荐</a>
+										<span>浏览86</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	<!-- 求婚百科结束 -->
+
+	<!-- onemeet套餐模块开始 -->
+	<div class="romantic_om">
+		<div class="public_title">
+			<div class="public_title1">浪漫定制</div>
+			<div class="public_title2">Romantic Customization</div>
+			<div class="public_title3">每一场求婚都是定制，每一段爱情都有主题</div>
+		</div>
+		<div class="romantic_content row">
+			
+			<div class="romantic_omdiv">
+				<div class="romantic_omdivcon">
+					<div class="romantic_omdiv_show">
+						<img src="images/onemeet1.png" class="romantic_icon">
+						<div class="romantic_dash"></div>
+						<h3>轻奢场布定制</h3>
+						<h3 class="romantic_price">￥1800起</h3>
+						<p>每一场求婚都是一个主题，而每一个场地的格局都需要定制不同的求婚风格，专门的统筹小组给女主不同的求婚体验</p>
+					</div>
+					<div class="romantic_omdiv_hover">
+						<p>每一场求婚都是一个主题，而每一个场地的格局都需要定制不同的求婚风格，专门的统筹小组给女主不同的求婚体验</p>
+						<div class="romantic_btn">
+							<a href="javascript(0)">立即咨询</a>
+							<a href="javascript(0)">立即定制</a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="romantic_omdiv">
+				<div class="romantic_omdivcon">
+					<div class="romantic_omdiv_show">
+						<img src="images/onemeet1.png" class="romantic_icon">
+						<div class="romantic_dash"></div>
+						<h3>完美剧情定制</h3>
+						<h3 class="romantic_price">￥5800起</h3>
+						<p>
+	                    	求婚前期的每一次准备都是爱的足迹和最好的证明，您的专属策划小组会帮您制定完美的求婚计划和准备工作，让求婚不再繁琐！
+	                	</p>
+					</div>
+					<div class="romantic_omdiv_hover">
+						<p>
+	                    	求婚前期的每一次准备都是爱的足迹和最好的证明，您的专属策划小组会帮您制定完美的求婚计划和准备工作，让求婚不再繁琐！
+	                	</p>
+						<div class="romantic_btn">
+							<a href="javascript(0)">立即咨询</a>
+							<a href="javascript(0)">立即定制</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="romantic_omdiv">
+				<div class="romantic_omdivcon">
+					<div class="romantic_omdiv_show">
+						<img src="images/onemeet1.png" class="romantic_icon">
+						<div class="romantic_dash"></div>
+						<h3>高端奢华定制</h3>
+						<h3 class="romantic_price">￥9800起</h3>
+						<p>
+	                    	完善的求婚计划，专属的求婚编导小组，电影级的求婚准备和拍摄标准，专门的求婚录音棚mv拍摄录制，让整个求婚的准备过程更加细腻和充足！
+	                	</p>
+					</div>
+					<div class="romantic_omdiv_hover">
+						<p>
+	                    	完善的求婚计划，专属的求婚编导小组，电影级的求婚准备和拍摄标准，专门的求婚录音棚mv拍摄录制，让整个求婚的准备过程更加细腻和充足！
+	                	</p>
+						<div class="romantic_btn">
+							<a href="javascript(0)">立即咨询</a>
+							<a href="javascript(0)">立即定制</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="romantic_omdiv">
+				<div class="romantic_omdivcon">
+					<div class="romantic_omdiv_show">
+						<img src="images/onemeet1.png" class="romantic_icon">
+						<div class="romantic_dash"></div>
+						<h3>轻奢场布定制</h3>
+						<h3 class="romantic_price">￥19800起</h3>
+						<p>
+	                    	完善的求婚计划，专属的求婚编导小组，电影级的求婚准备和拍摄标准，专门的求婚录音棚mv拍摄录制，让整个求婚的准备过程更加细腻和充足！
+	                	</p>
+					</div>
+					<div class="romantic_omdiv_hover">
+						<p>轻奢场布定制轻奢场布定制轻奢场布定制轻奢场布定制轻奢场布定制轻奢场布定制</p>
+						<div class="romantic_btn">
+							<a href="javascript(0)">立即咨询</a>
+							<a href="javascript(0)">立即定制</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="romantic_omdiv">
+				<div class="romantic_omdivcon">
+					<div class="romantic_omdiv_show">
+						<img src="images/onemeet1.png" class="romantic_icon">
+						<div class="romantic_dash"></div>
+						<h3>轻奢场布定制</h3>
+						<h3 class="romantic_price">￥39800起</h3>
+						<p>
+	                    	完善的求婚计划，专属的求婚编导小组，电影级的求婚准备和拍摄标准，专门的求婚录音棚mv拍摄录制，让整个求婚的准备过程更加细腻和充足！
+	                	</p>
+					</div>
+					<div class="romantic_omdiv_hover">
+						<p>轻奢场布定制轻奢场布定制轻奢场布定制轻奢场布定制轻奢场布定制轻奢场布定制</p>
+						<div class="romantic_btn">
+							<a href="javascript(0)">立即咨询</a>
+							<a href="javascript(0)">立即定制</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- onemeet套餐模块结束 -->
+
+	<!-- 底部开始 -->
+		<div class="footer">
+			<div class="footer_container row">
+					<div class="footer_div">
+						<h4><strong>求婚服务</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+					<div class="footer_div">
+						<h4><strong>作品案例</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+					<div class="footer_div">
+						<h4><strong>求婚工具</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+					<div class="footer_div">
+						<h4><strong>攻略·社区</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+                    <div class="footer_div">
+						<h4><strong>关于我们</strong></h4>
+						<ul>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+							<li><a href="">求婚摄影</a></li>
+							<li><a href="">求婚道具</a></li>
+							<li><a href="">求婚方案</a></li>
+							<li><a href="">求婚视频</a></li>
+						</ul>
+					</div>
+                    <div class="footer_div">
+						<h4><strong>婚庆服务</strong></h4>
+						<div class="erweima row">
+                        	<!--二维码开始-->
+                            <div id="myTabContent" class="tab-content">
+                                <div class="tab-pane fade row" id="footer1">
+                                    <div class="footer_image row">
+                                        <img src="images/xiaochengxu.png">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade row" id="footer2">
+                                    <div class="footer_image row">
+                                       <img src="images/weibo.png">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade row" id="footer3">
+                                    <div class="footer_image row">
+                                        <img src="images/gongzhonghao.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <ul class="row list-nav nav nav-tabs">
+                                <li class="">
+                                	<a href="#footer1" data-toggle="tab" >
+                                		<img src="images/小程序.png">
+                                	</a>
+                                </li>
+                                <li class="">
+                                	<a href="#footer2" data-toggle="tab">
+                                		<img src="images/公众号.png">	
+                                	</a>		
+                                </li>
+                                <li class="">
+                                	<a href="#footer3" data-toggle="tab" >
+                               			<img src="images/微博.png">
+                               		</a> 
+                               </li>
+                            </ul>
+                       	 <!--二维码结束-->
+                        </div>
+
+                        <div class="erweima_right">
+                        	多对一贴心服务<br>策划师平均每月只承接1.5场求婚
+                        </div>
+					</div>
+			</div>
+			<div class="search_link">
+				
+				<!-- 导航区 -->
+				<ul class="nav nav-tabs" role="tablist">
+				  <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">热门搜索</a></li>
+				  <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">友情链接</a></li>
+				</ul> 
+				 
+				<!-- 面板区 --> 
+				<div class="tab-content">
+				  <div role="tabpanel" class="tab-pane active in" id="home">
+				  		<div class="search_hot">
+							<a href="">广场求婚</a>
+							<a href="">求婚策划</a>
+							<a href="">求婚创意</a>
+							<a href="">求婚视频</a>
+						</div>
+				  </div>
+				  <div role="tabpanel" class="tab-pane" id="profile">
+				  		<div class="friendship_link">
+							<a href="">一遇求婚</a>
+							<a href="">求婚策划</a>
+							<a href="">求婚策划</a>
+							<a href="">广场求婚</a>
+						</div>
+				  </div>
+				
+				</div>
+			</div>
+			
+			<div class="footer_end">
+				<div class="footer_end1">
+					<a href="">隐私保护</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">企业理念</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">品质保障</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">产品服务</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">联系我们</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">公司介绍</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="">一遇十年</a>
+				</div>
+				<div class="footer_end2">
+                    	全国免费咨询热线：400-1388-521&nbsp;24小时值班热线：18612333425&nbsp;全国统一客服&nbsp;-&nbsp;QQ：284218433&nbsp;微信：18612333425&nbsp;微博：求婚创意策划-OM一遇<br>
+                        Copyright © 2008-2019 一遇OM私人定制浪漫创意求婚策划公司 (本网站部分图片和视频来源于网络，如有侵权，请及时联系我们删除)。京ICP备17068269号-3                    
+                </div>
+			</div>
+		</div>
+	<!-- 底部结束 -->
+    
+    <!--侧边栏开始-->
+    	<div class="float_right">
+        	<ul>
+            	
+            	<li>
+                	<div>
+                    	<i class="icon-user icon"></i><br>
+                    	<span>快速登录</span>
+                    </div>
+                </li>
+                <li>
+                	<div>
+                    	<i class="icon-comment icon"></i><br>
+                    	<span>咨询商家</span>
+                    </div>
+                </li>
+                <li class="chat_div">
+                	<div>
+                    	<i class="icon-qrcode icon"></i><br>
+                    	<span>添加微信</span>
+                    </div>
+                    <div class="weixin_chat">
+                    	<h4><strong>扫描微信二维码</strong></h4>
+                        <img src="images/weixin_chat.png">
+                        <div>
+                        	<span>复制微信号添加顾问微信</span><br>
+                        	<span>18612333425</span>
+                        </div>
+                        
+                    </div>
+                </li>
+                <li onclick="pageScroll()">
+                	<div>
+                        <i class="icon-chevron-up icon"></i><br>
+                        <span>返回顶部</span>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="fixed_div">
+                <div class="fixed_div_content fixed_div_weixin">
+                	<i class=" icon-remove"></i>
+                    <h3><strong>微信快速登录</strong></h3>
+                    
+                    <img src="images/weixin_sign.jpg">
+                    <div class="fixed_div_bottom row">
+                        <span class="span1"><img src="images/s1s.png"></span>
+                        <span class="span2">
+                            <span>打开微信扫一扫</span><br>
+                            <span>快速登录</span>
+                        </span>
+                        
+                        <span class="span3">
+                            <img src="images/computer.png" class="computer_btn">
+                        </span>
+                    </div>
+                </div>
+                <!-- 登录开始 -->
+                <div class="fixed_div_content fixed_div_code fixed_div_user">
+                	<i class=" icon-remove"></i>
+                    <h3><strong>验证码登录</strong></h3>
+                    <div class="form_sign">
+                    	<div class="input_div">
+                    		
+                    		<input type="text" name="" placeholder="请输入手机号" class="form-control  in_control1">
+                    	</div>
+                    	
+                    	<div class="row code_div input_div">
+                    		
+                    		<input type="text" name="" placeholder="请输入验证码" id="VerificationCode" class="form-control in_control2">
+                    		<input type="button" id="sendVerificationCode"  value="验证码"  class="code_btn in_control3" onclick="code_biu(1)">
+                    	</div>
+                    	<div class="user_div_index">
+                    		<div class="bottom_index row">
+                    			<span href="" class="a1">账号密码登录</span>
+                    			<span href="" class="a2">去注册</span>
+                    		</div>
+                    	</div>
+                    	<div class="sign_div">
+                    		<input type="submit" name="" placeholder="登录" class="in_control4">
+                    	</div>
+                    	
+                    </div>
+                    
+                    <div class="fixed_div_bottom row">
+                    	<img src="images/people.png" class="people_img">
+                        <h4>用行动证明爱情</h4>
+                        
+                        <span class="erweima_div">
+                            <img src="images/erweima_btn.png" class="erweima_btn">
+                        </span>
+                    </div>
+                </div>
+                <!-- 登录结束 -->
+                <!-- 注册开始 -->
+                <div class="fixed_div_content fixed_div_register fixed_div_user">
+                	<i class=" icon-remove"></i>
+                    <h3><strong>立即注册</strong></h3>
+                    <div class="form_sign">
+                    	<div>
+                    		<input type="text" name="" placeholder="请输入手机号" class="form-control  in_control1">
+                    	</div>
+                    	
+                    	<div class="row code_div">
+                    		<input type="text" name="" placeholder="请输入验证码" id="VerificationCode1" class="form-control in_control2">
+                    		<input type="button" id="sendVerificationCode1"  value="验证码"  class="code_btn in_control3" onclick="code_biu(2)">
+                    	</div>
+                    	
+                    	<div class="user_div_index">
+                    		<div class="bottom_index row">
+                    			<span href="" class="a1">验证码登录</span>
+                    			<span href="" class="a2">账号密码登录</span>
+                    		</div>
+                    	</div>
+                    	<div class="sign_div">
+                    		<input type="submit" name="" placeholder="登录" class="in_control4">
+                    	</div>
+                    	
+                    </div>
+                    
+
+                    <div class="fixed_div_bottom row">
+                    	<img src="images/people.png" class="people_img">
+                        <h4>用行动证明爱情</h4>
+                        <span class="erweima_div">
+                            <img src="images/erweima_btn.png" class="erweima_btn">
+                        </span>
+                    </div>
+                </div>
+                <!-- 注册结束 -->
+                <!-- 账号密码登录开始 -->
+                <div class="fixed_div_content fixed_div_password fixed_div_user">
+                	<i class=" icon-remove"></i>
+                    <h3><strong>账号密码登录</strong></h3>
+                    <div class="form_sign">
+                    	<div>
+                    		<input type="text" name="" placeholder="请输入手机号" class="form-control  in_control1">
+                    	</div>
+                    	<div class="register_user">
+                    		<input type="password" name="" placeholder="请输入密码" class="form-control  in_control1">
+                    	</div>
+                    	<div class="user_div_index">
+                    		<div class="bottom_index row">
+                    			<span href="" class="a1">验证码登录</span>
+                    			<span href="" class="a2">去注册</span>
+                    		</div>
+                    	</div>
+                    	<div class="sign_div">
+                    		<input type="submit" name="" placeholder="登录" class="in_control4">
+                    	</div>
+                    	
+                    </div>
+                    
+                    <div class="fixed_div_bottom row">
+                    	<img src="images/people.png" class="people_img">
+                         <h4>用行动证明爱情</h4>
+                        <span class="erweima_div">
+                            <img src="images/erweima_btn.png" class="erweima_btn">
+                        </span>
+                    </div>
+                </div>
+                <!-- 账号密码登录结束-->
+        </div>
+    <!--侧边栏结束-->
+	
+    <!--快速预约开始-->
+    <div class="appointmentDiv">
+    	<div class="appointment"><img src="images/appointment.png"></div>
+        <div class="appointmentPlate">
+        	<img src="images/yxd.jpg">
+            <div class="appointmentForm">
+            	<h3>
+            		10s快速预约立即咨询
+            	</h3>
+            	<form>
+                    <label>
+                    	<i class=" icon-user"></i>
+                        <input type="text" placeholder="请输入您的姓名">
+                    </label>
+                    <label>
+                    	<i class="icon-phone"></i>
+                        <input type="text" placeholder="请输入您的手机号">
+                    </label>                	
+                </form>
+
+                <div class="appText">如何策划一场与众不同的婚礼<br>别担心，我们已为您准备好了一切</div>
+                <button>立即提交，预约策划师</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="appAlert">
+    	<img src="images/zxTC08.png">
+    </div>
+    <!--快速预约结束-->
+
+    <!-- 底部固定图片开始 -->
+    <div class="bottomFixed">
+    	<img src="images/bottom.png">
+    </div>
+    <!-- 底部固定图片结束 -->
+	<script src="js/utill.js"></script>
+
+<!-- <script src="js/jquery.min.js"></script> -->
+<!-- <script src="js/player.js"></script> -->
+
+	<script src='js/hammer.min.js'></script>
+	<script src='js/slider.js'></script>
+	 
+	<script>
+	  
+	  //底部标签页开始
+$(document).ready(function(){	 
+		$('.navbar .nav>li:last-child').hover(function(){
+			$('.nav_dropdown').slideDown();
+			$(this).children('a').css({'color':'#e95383','border-bottom':'2px solid #e95383'});
+		},function(){
+			$('.nav_dropdown').slideUp();
+			$(this).children('a').css({'color':'#333','border-bottom':'0'});
+		})
+		$('.nav_show .navbar1 .nav>li:nth-child(6)').hover(function(){
+			$('.nav_dropdown1').slideDown();
+			$(this).children('a').css({'color':'#e95383','border-bottom':'2px solid #e95383'});
+		},function(){
+			$('.nav_dropdown1').slideUp();
+			$(this).children('a').css({'color':'#333','border-bottom':'0'});
+		})
+	  	$('.index_banner .carousel-indicators li:nth-child(1)').click(function(){
+	  		var v1=document.getElementById('videoLittle');
+	  		v1.pause();
+	  		var v2=document.getElementById('video');
+	  		v2.play();
+	  	})
+	  	$('.index_banner .carousel-indicators li:nth-child(1)').siblings().click(function(){
+	  		var v1=document.getElementById('videoLittle');
+	  		v1.play();
+	  	})
+	  	/*团队轮播*/
+			$(".team .carousel-inner .item:first").addClass('active');
+	  		$('.encyclopedias_container ul li:nth-child(2)').addClass('active');
+			$('.encyclopedias_container ul li').hover(function(){
+				$(this).addClass('active');
+				$(this).siblings().removeClass('active');
+			})
+			
+
+			$(".erweima .list-nav li:first").addClass('active');
+			$(".erweima .tab-content .tab-pane:first").addClass('active in');
+
+			$('.computer_btn').click(function(){
+				$('.fixed_div_weixin').hide();
+				$('.fixed_div_code').show();
+			})
+			$('.erweima_btn').click(function(){
+				
+				$('.fixed_div_user').hide();
+				$('.fixed_div_weixin').show();
+			});
+			$('.fixed_div_code .bottom_index .a1').click(function(){
+				$('.fixed_div_code').hide();
+				$('.fixed_div_password').show();
+			})
+			$('.fixed_div_code .bottom_index .a2').click(function(){
+				$('.fixed_div_code').hide();
+				$('.fixed_div_register').show();
+			})
+			$('.fixed_div_register .bottom_index .a1').click(function(){
+				$('.fixed_div_code').show();
+				$('.fixed_div_register').hide();
+			})
+			$('.fixed_div_register .bottom_index .a2').click(function(){
+				$('.fixed_div_password').show();
+				$('.fixed_div_register').hide();
+			})
+			$('.fixed_div_password .bottom_index .a1').click(function(){
+				$('.fixed_div_code').show();
+				$('.fixed_div_password').hide();
+			})
+			$('.fixed_div_password .bottom_index .a2').click(function(){
+				$('.fixed_div_register').show();
+				$('.fixed_div_password').hide();
+			})
+
+			$(".chat_div").hover(function(){
+			    $(".weixin_chat").show(200);
+			},function(){
+				$(".weixin_chat").hide(200);
+			});
+
+			$('.appointment').click(function(){
+				$('.appointmentPlate').fadeIn();
+			})
+
+			$('.appointmentPlate button').click(function(){
+				$('.appAlert').show();
+			})
+			$('.appAlert').click(function(){
+				$(this).hide();
+				$('.appointmentPlate').fadeOut();
+			})
+			
+			$('.bottomFixed').click(function(){
+				$(this).hide();
+			})
+			
+	  })
+
+	$(window).click(function(){
+	    if ($('.appointmentPlate').css('display')!='none') {
+	        $('.appointmentPlate').hide();
+	    }    
+	});
+	$('.appointmentPlate').click(function(event){
+        //取消事件冒泡  
+         event.stopPropagation();
+    });
+	  // $('#pbSlider0').pbTouchSlider({
+	  //   slider_Wrap: '#pbSliderWrap0',
+	  //   slider_Threshold: 10,
+	  //   slider_Speed:600,
+	  //   slider_Ease:'ease-out',
+	  //   slider_Drag : true,//拖动
+			// auto:true,//是否自动滚动
+			// autoTime:3000,//设置图片自动时间
+	  //   slider_Arrows: {
+	  //     enabled : true//箭头
+	  //   },
+	  //   slider_Dots: {//显示点不
+	  //     class :'.o-slider-pagination',
+	  //     enabled : false,
+	  //     preview : false
+	  //   },
+	  //   // slider_Breakpoints: {
+	  //   //     default: {
+	  //   //         height: 700//高度
+	  //   //     },
+	  //   //     tablet: {
+	  //   //         height: 500,
+	  //   //         media: 1024
+	  //   //     },
+	  //   //     smartphone: {//智能手机高度
+	  //   //         height: 400,
+	  //   //         media: 768
+	  //   //     }
+	  //   // }
+	  // });
+				
+	</script>
+
+	<script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

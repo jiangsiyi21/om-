@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="css/video_lunbo.css">
+<!-- <link rel="stylesheet" type="text/css" href="icons/entypo.css"> -->
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+</style>
+</head>
+<body>
+
+<div class='o-sliderContainer' id="pbSliderWrap0" style="margin:0;">
+    <div class='o-slider' id='pbSlider0'>
+        <div class="o-slider--item" >
+            <video class='video' autoplay muted loop >
+                <source src="images/OM SP15.9.mp4" type="video/mp4">
+            </video>
+            <div class="o-slider-textWrap"></div>
+        </div>
+        <div class="o-slider--item" data-image="images/1.png">
+            <div class="o-slider-textWrap"> </div>
+        </div>
+        <div class="o-slider--item" data-image="images/2.png">
+             <div class="o-slider-textWrap"></div>
+        </div>
+            <div style="clear:both;"></div>
+    </div>
+
+</div>
+
+
+</body>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src='js/hammer.min.js'></script>
+<script src='js/slider.js'></script>
+<script>
+  $('#pbSlider0').pbTouchSlider({
+    slider_Wrap: '#pbSliderWrap0',
+    slider_Threshold: 10,
+    slider_Speed:600,
+    slider_Ease:'ease-out',
+    slider_Drag : true,//拖动
+		auto:true,//是否自动滚动
+		autoTime:3000,//设置图片自动时间
+    slider_Arrows: {
+      enabled : true//箭头
+    },
+    slider_Dots: {//显示点不
+      class :'.o-slider-pagination',
+      enabled : true,
+      preview : false
+    },
+    slider_Breakpoints: {
+        default: {
+            height: 700//高度
+        },
+        tablet: {
+            height: 500,
+            media: 1024
+        },
+        smartphone: {//智能手机高度
+            height: 400,
+            media: 768
+        }
+    }
+  });
+</script>
+</html>
